@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const getAccess = require('../auth/token_validation')
 
 router.delete("/:id", getAccess, async(req, res)=>{
-    if(req.body.userId === req.params.id)
+    if(req.session.userId === req.params.id)
     {
         try{
             await User.findByIdAndDelete(req.params.id);
@@ -21,7 +21,7 @@ router.delete("/:id", getAccess, async(req, res)=>{
 });
 
 router.put("/:id", getAccess, async(req, res)=>{
-    if(req.body.userId === req.params.id)
+    if(req.session.userId === req.params.id)
     {
         if(req.body.password){
             try{
@@ -61,7 +61,7 @@ router.get("/:id", getAccess, async(req, res)=>{
 
 router.get("/:id/viewProfile", getAccess, async(req, res)=>{
     try{
-        if(req.params.id === req.body.userId)
+        if(req.params.id === req.session.userId)
         {
             const user = await User.findById(req.params.id);
             const {password, updatedAt, createdAt, ...other} = user._doc
@@ -80,7 +80,7 @@ router.get("/:id/viewProfile", getAccess, async(req, res)=>{
 router.get("/:id/viewAllUsers", getAccess, async(req, res)=>{
     try{
         const allProfile = [];
-        const userId = req.body.userId
+        const userId = req.session.userId;
         const user = await User.find({_id : {$ne : userId}});
         // const {password, updatedAt, createdAt, ...other} = user._doc
         user.forEach(function(err, currUser){
@@ -117,21 +117,21 @@ router.get("/:id/searchUser", getAccess, async(req, res)=>{
 
 
 router.put("/:id/friend", getAccess, async(req, res)=>{
-    if(req.body.userId !== req.params.id)
+    if(req.session.userId !== req.params.id)
     {
         try{
             const user = await User.findById(req.params.id);
-            const currentUser = await User.findById(req.body.userId);
+            const currentUser = await User.findById(req.session.userId);
             console.log(user)
-            if(!user.friend.includes(req.body.userId))
+            if(!user.friend.includes(req.session.userId))
             {
-                await user.updateOne({$push : {friend:req.body.userId}});
+                await user.updateOne({$push : {friend:req.session.userId}});
                 await currentUser.updateOne({$push : {friend:req.params.id}});
                 res.status(200).json("Successful")
             }
             else
             {
-                await user.updateOne({$pull : {friend:req.body.userId}});
+                await user.updateOne({$pull : {friend:req.session.userId}});
                 await currentUser.updateOne({$pull : {friend:req.params.id}});
                 res.status(200).json("unfriend Successfully")
             }

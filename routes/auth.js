@@ -4,10 +4,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const session = require("express-session");
 
-const onehour = 1000 * 60 * 60 * 1;
-router.use(session({secret:"socialmediaapp", resave:false, saveUninitialized:false, cookie:{maxAge:onehour}}))
-
-
 router.post("/register", async (req, res)=>{
     try{
         const salt = await bcrypt.genSalt(10);
@@ -34,15 +30,20 @@ router.post("/login", async (req, res)=>{
         const validPassword = await bcrypt.compare(req.body.password, user.password)
         !validPassword && res.status(400).json("Invalid Password")
 
-        const token = jwt.sign({_id : user._id}, process.env.JWT_KEY);
+        console.log(req.body.email)
+        const token = jwt.sign({_id : user._id}, process.env.JWT_KEY, {expiresIn:"10m"});
 
-        req.session.auth = true
-        
+        const Users = await User.find({'email' : req.body.email})
+
+        req.session.auth = true;
+        req.session.userId = Users[0]._id.toString()
+
         res.header('auth-token', token).send(token);
         // res.status(200).json(token)
     }
     catch(err)
     {
+        console.log(err)
         res.status(500).json(err);
     }
 })
