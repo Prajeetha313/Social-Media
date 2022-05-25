@@ -8,13 +8,6 @@ const userRoute = require("./routes/users")
 const authRoute = require("./routes/auth")
 const postRoute = require("./routes/posts")
 
-const session = require("express-session");
-const cookiePraser = require("cookie-parser");
-
-app.use(session({secret:"socialmediaapp", resave:false, saveUninitialized:false, cookie:{maxAge:1000*60*60*1}}))
-
-
-
 
 dotenv.config();
 
