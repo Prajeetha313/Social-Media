@@ -15,9 +15,7 @@ const Post = () => {
         img : '', 
         desc : ''
     });
-    // const [caption, setCaption] = useState("")
-
-
+  
     const dispatch = useDispatch();
 
 
@@ -73,13 +71,7 @@ const Post = () => {
                         </div>
                     )}
 
-
-
-
-
-
-                        
-                </form>
+                   </form>
             </div>
         </div>
     </div>
