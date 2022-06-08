@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { profile } from '../actions/auth';
 import axios from 'axios'
 import { AiOutlineLike, AiFillLike } from 'react-icons/ai'
 import { FaComment } from 'react-icons/fa'
 import './Home.css'
-import { selectUser } from '../../src/reducer/userSlice'
 import { ToastContainer } from 'react-toastify';
 import { likePost } from '../actions/auth'
 import { unlikePost } from '../actions/auth'
