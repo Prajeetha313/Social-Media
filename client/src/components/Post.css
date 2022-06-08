@@ -1,0 +1,31 @@
+#imagecontainer{
+    width: 400px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+#imagecontainer .col1{
+    width: 380px;
+    float: left;
+    height: 400px;
+    margin : 0px;
+}
+
+#imagecontainer .col1 img { 
+    padding: 0px;
+    align-items: center;
+    width: fit-content;
+    height: 350px;
+}
+
+#imagecontainer .col1 button {
+    background-color: teal !important;
+    color: white !important;
+    width: 160px;
+    margin: 10px;
+}
+.imgButton {
+    height: 400px;
+}

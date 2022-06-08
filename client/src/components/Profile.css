@@ -1,0 +1,58 @@
+
+#container {
+    width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    color: teal;
+}
+
+.col1{
+    width: 380px;
+    float: left;
+    height: 400px;
+    margin : 10px;
+}
+
+.col2 {
+    width: 380px;
+    float: left;
+    height: 400px;
+    margin : 10px;
+}
+
+.col1 img {
+    width: 360px;
+    height: 420px;
+    margin: 10px;
+}
+
+.col1 button {
+    width: 360px;
+    height: 35px;
+    margin: 10px;
+    background-color: teal;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: cursive;
+}
+
+.col2 .col2Container {
+    width: 360px;
+    height: 330px;
+    margin: 30px;
+}
+
+.col2 .col2Container input{
+    margin-top: 0px;
+    /* margin-bottom: 10px; */
+    width: 350px;
+    /* height: 30px; */
+    font-family: cursive;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.postedImage{
+    margin-top: 500px;
+}

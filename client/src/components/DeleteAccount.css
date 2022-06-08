@@ -1,0 +1,20 @@
+.card2 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    float: none;
+    margin : 0 auto;
+    transition: 0.3s;
+    text-align: center;
+    display: flex;
+    width: fit-content;
+    height: auto;
+  }
+
+  .card2:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container3 {
+    padding: 15px 60px;
+  }
+
+ 

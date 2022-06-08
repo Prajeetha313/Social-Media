@@ -1,0 +1,55 @@
+.homecontainer {
+    width: 820px;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: grid;
+    padding-top: 10px;
+    margin : 0 auto;
+}
+.homefooter{
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-left: 30px;
+    height: auto;
+
+}
+.homecontainer:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+}
+
+.homeHeader{
+    height: 50px;
+}
+
+.homeBody{
+    height: 450px;
+    padding-top: 10px;
+}
+
+.homeHeaderUser{
+    padding-top: 15px;
+    font-weight: bold;
+    padding-left: 80px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.homeBody img{
+    height: 440px;
+    width: 800px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.homeHeaderImg{
+    width: 60px;
+    padding-left: 10px;
+    height: 50px;
+    float: left;
+}
+
+.homeHeaderImg img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
