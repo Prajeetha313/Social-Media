@@ -37,7 +37,6 @@ const FriendSuggestion = () => {
         setSearchResult(res.data)
         })
         setFriends(friend)
-        // setSearchResult(allUsers)
     }, []);
 
 
