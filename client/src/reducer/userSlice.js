@@ -25,13 +25,13 @@ export default function (state = initialState, action) {
     switch(type) {
         case LOGIN_SUCCESS: 
             localStorage.setItem("user", JSON.stringify(payload.user))
-            localStorage.setItem("username", JSON.stringify(payload.user.username))
-            localStorage.setItem("_id", JSON.stringify(payload.user._id))
-            localStorage.setItem("email", JSON.stringify(payload.user.email))
-            localStorage.setItem("mobile", JSON.stringify(payload.user.mobile))
-            localStorage.setItem("profileImg", JSON.stringify(payload.user.profileImg))
-            localStorage.setItem("desc", JSON.stringify(payload.user.desc))
-            localStorage.setItem("friend", JSON.stringify(payload.user.friend))
+            // localStorage.setItem("username", JSON.stringify(payload.user.username))
+            // localStorage.setItem("_id", JSON.stringify(payload.user._id))
+            // localStorage.setItem("email", JSON.stringify(payload.user.email))
+            // localStorage.setItem("mobile", JSON.stringify(payload.user.mobile))
+            // localStorage.setItem("profileImg", JSON.stringify(payload.user.profileImg))
+            // localStorage.setItem("desc", JSON.stringify(payload.user.desc))
+            // localStorage.setItem("friend", JSON.stringify(payload.user.friend))
 
 
             return {
