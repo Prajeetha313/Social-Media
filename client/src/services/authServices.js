@@ -34,13 +34,6 @@ const postImage = async (post) => {
 const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    localStorage.removeItem("username");
-    localStorage.removeItem("email");
-    localStorage.removeItem("_id");
-    localStorage.removeItem("desc");
-    localStorage.removeItem("profileImg");
-    localStorage.removeItem("mobile");
-    localStorage.removeItem("friend");
 
     window.location.replace("/Login")
 };
