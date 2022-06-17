@@ -28,7 +28,7 @@ const Profile = (props) => {
     const {user} = useSelector(state => state.user)
 
     console.warn(user.username);
-    // let emailId = JSON.parse(localStorage.getItem("email"))
+
     let emailId = JSON.parse(localStorage.getItem("user")).email
     let friendLen = JSON.parse(localStorage.getItem("user")).friend.length;
 
@@ -41,7 +41,6 @@ const Profile = (props) => {
         
             setUsername(JSON.parse(localStorage.getItem("user")).username);
             setMobile(JSON.parse(localStorage.getItem("user")).mobile);
-            // setMobile(localStorage.getItem("mobile"));
             setDesc(JSON.parse(localStorage.getItem("user")).desc);
             setProfileimg(JSON.parse(localStorage.getItem("user")).profileImg)
     }, []);
